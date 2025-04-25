@@ -4,5 +4,4 @@ export interface KelompokInterface {
     kelas: string,
     jobdesk: string,
     image: string,
-    isMan: boolean
 }

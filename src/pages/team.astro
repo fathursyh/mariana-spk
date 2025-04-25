@@ -1,0 +1,45 @@
+---
+import TeamAvatar from 'src/components/astro/composables/TeamAvatar.astro';
+import Layout from '../layouts/Layout.astro';
+import type { KelompokInterface } from 'src/models/KelompokInterface';
+import WaveBackground from 'src/components/astro/composables/WaveBackground.astro';
+const kelompok : KelompokInterface[] = [
+	{
+		name: "Fathursyah A",
+		npm: "065122057",
+		kelas: "B",
+		jobdesk: "Fullstack Web",
+		image: "",
+	},
+	{
+		name: "Helena",
+		npm: "065122003",
+		kelas: "A",
+		jobdesk: "UI/UX",
+		image: "",
+	},
+	{
+		name: "Riri",
+		npm: "065122000",
+		kelas: "E",
+		jobdesk: "UI/UX",
+		image: "",
+	},
+]
+---
+
+<Layout>
+	<WaveBackground />
+	<main class="min-h-screen xl:h-screen overflow-hidden bg-gradient-to-b from-base to-blue-950 md:p-12 p-6 text-gray-50">
+		<section class="border-gray-300 border h-full rounded-lg p-8 flex flex-col justify-center gap-12 md:gap-20 bg-black/50 overflow-hidden relative">
+			<h2 class="text-center text-2xl font-semibold">Our Team</h2>
+			<div class="w-full flex items-center gap-10 flex-wrap md:justify-evenly">
+				{
+					kelompok.map(item => (
+						<TeamAvatar {...item}  />
+					))
+				}
+			</div>
+		</section>
+	</main>
+</Layout>

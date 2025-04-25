@@ -1,17 +1,13 @@
 ---
-const { name, npm, kelas, jobdesk, image, isMan } = Astro.props;
-import { Image } from 'astro:assets';
+const { name, npm, kelas, jobdesk, image } = Astro.props;
 ---
 
-<div class:list={['flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 dark:text-gray-100', isMan ? "bg-gray-800" : "bg-pink-500"]}>
-    <Image class="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full dark:bg-gray-500" loading={'lazy'} src={image! || "https://source.unsplash.com/100x100/?portrait?0"} alt={name! || "Team"} width="96" height="96" />
+<div class="w-full max-w-xs text-center">
+    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src={ image || "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=739&q=80" } alt="avatar" />
 
-    <div class="flex-1 my-4">
-        <p class="text-xl font-semibold leading-snug">{name || 'Nama Anggota'}</p>
-        <p>{jobdesk || 'UI UX Designer'}</p>
-    </div>
-    <div class="flex items-center justify-center p-3 space-x-3 border-t-2">
-        <p>{ npm || "065122000" }</p>
-        <p>({ kelas || "A" })</p>
+    <div class="mt-2">
+        <h3 class="md:text-lg font-medium text-gray-700 dark:text-gray-200">{name}</h3>
+        <p class="font-light text-gray-400 text-sm">{npm} ({kelas})</p>
+        <span class="mt-1 font-medium text-gray-600 dark:text-gray-300 text-sm">{jobdesk}</span>
     </div>
 </div>
