@@ -1,30 +1,44 @@
 ---
 // import WebFooter from "src/components/astro/WebFooter.astro";
+import WebNavbar from "src/components/astro/navigations/WebNavbar.astro";
 import "src/styles/global.css";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-		<!-- <WebFooter /> -->
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>SPK Mariana Trench</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script is:inline src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body>
+        <WebNavbar />
+        <slot />
+        <!-- <WebFooter /> -->
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js" is:inline></script>
+        <script is:inline>
+            AOS.init({
+                offset: 120, 
+                delay: 0,
+                duration: 800, 
+                easing: "ease", 
+            });
+        </script>
+    </body>
 </html>
 
 <style>
-	html,
-	body {
-		font-family: "Montserrat";
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		overflow-x: hidden;
-	}
+    html,
+    body {
+        font-family: "Montserrat";
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+    }
 </style>

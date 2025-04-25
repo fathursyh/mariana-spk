@@ -26,17 +26,21 @@ const kelompok : KelompokInterface[] = [
 		image: "",
 	},
 ]
+
+Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600");
 ---
+
+<title>Our Team</title>
 
 <Layout>
 	<WaveBackground />
 	<main class="min-h-screen xl:h-screen overflow-hidden bg-gradient-to-b from-base to-blue-950 md:p-12 p-6 text-gray-50">
 		<section class="border-gray-300 border h-full rounded-lg p-8 flex flex-col justify-center gap-12 md:gap-20 bg-black/50 overflow-hidden relative">
-			<h2 class="text-center text-2xl font-semibold">Our Team</h2>
-			<div class="w-full flex items-center gap-10 flex-wrap md:justify-evenly">
+			<h2 class="text-center text-2xl font-semibold" data-aos="slide-down" data-aos-duration="600">Our Team</h2>
+			<div class="w-full flex items-center gap-10 flex-wrap md:justify-evenly" >
 				{
 					kelompok.map(item => (
-						<TeamAvatar {...item}  />
+						<TeamAvatar {...item} />
 					))
 				}
 			</div>
