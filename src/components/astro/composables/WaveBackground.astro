@@ -1,8 +1,8 @@
 ---
-
+const {isHome} = Astro.props;
 ---
 
-<div class="ocean">
+<div class:list={['ocean', isHome && 'opacity-45']}>
     <div class="wave" data-aos="fade" data-aos-duration="1800" data-aos-delay="1800"></div>
     <div class="wave" data-aos="fade" data-aos-duration="1800" data-aos-delay="1800"></div>
     <div class="wave" data-aos="fade" data-aos-duration="1800" data-aos-delay="1800"></div>
@@ -11,7 +11,7 @@
 <style>
     .ocean {
         pointer-events: none;
-        filter: blur(8px) hue-rotate(30deg) saturate(80%) brightness(70%) opacity(0.8);
+        filter: blur(8px) hue-rotate(30deg) saturate(120%) brightness(90%);
         height: 2%;
         width: 100%;
         position: fixed;

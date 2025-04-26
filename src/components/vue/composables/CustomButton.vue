@@ -40,7 +40,7 @@
     }
 
     .ghost:hover {
-        background-color: gray;
+        background-color: rgb(207, 207, 207);
         color: black;
     }
 </style>
