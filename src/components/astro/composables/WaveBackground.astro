@@ -2,18 +2,20 @@
 
 ---
 
-<div class="ocean bg-base">
-    <div class="wave"></div>
-    <div class="wave"></div>
+<div class="ocean">
+    <div class="wave" data-aos="fade" data-aos-duration="1800" data-aos-delay="1800"></div>
+    <div class="wave" data-aos="fade" data-aos-duration="1800" data-aos-delay="1800"></div>
+    <div class="wave" data-aos="fade" data-aos-duration="1800" data-aos-delay="1800"></div>
 </div>
 
 <style>
     .ocean {
-        filter: blur(8px);
-        height: 10%;
+        pointer-events: none;
+        filter: blur(8px) hue-rotate(30deg) saturate(80%) brightness(70%) opacity(0.8);
+        height: 2%;
         width: 100%;
-        position: absolute;
-        bottom: 0;
+        position: fixed;
+        bottom: -10px;
         left: 0;
     }
 
@@ -29,6 +31,13 @@
 
     .wave:nth-of-type(2) {
         top: -175px;
+        animation:
+            wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+            swell 7s ease -1.25s infinite;
+        opacity: 1;
+    }
+    .wave:nth-of-type(3) {
+        bottom: 0;
         animation:
             wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
             swell 7s ease -1.25s infinite;

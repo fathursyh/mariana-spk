@@ -5,24 +5,24 @@ import type { KelompokInterface } from 'src/models/KelompokInterface';
 import WaveBackground from 'src/components/astro/composables/WaveBackground.astro';
 const kelompok : KelompokInterface[] = [
 	{
-		name: "Fathursyah A",
+		name: "Fathur Syah",
 		npm: "065122057",
 		kelas: "B",
-		jobdesk: "Fullstack Web",
+		jobdesk: "Web & DSS Model",
 		image: "",
 	},
 	{
-		name: "Helena",
-		npm: "065122003",
+		name: "Helena Octaviana",
+		npm: "065122005",
 		kelas: "A",
-		jobdesk: "UI/UX",
+		jobdesk: "UI/UX & DSS Model",
 		image: "",
 	},
 	{
-		name: "Riri",
-		npm: "065122000",
+		name: "Riri Handini",
+		npm: "065122121",
 		kelas: "E",
-		jobdesk: "UI/UX",
+		jobdesk: "DSS Model",
 		image: "",
 	},
 ]
@@ -34,7 +34,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600
 
 <Layout>
 	<WaveBackground />
-	<main class="min-h-screen xl:h-screen overflow-hidden bg-gradient-to-b from-base to-blue-950 md:p-12 p-6 text-gray-50">
+	<main class="min-h-screen xl:h-screen overflow-hidden bg-gradient-to-b from-base-color to-blue-950 md:p-12 p-6 text-gray-50 mt-12 md:mt-0">
 		<section class="border-gray-300 border h-full rounded-lg p-8 flex flex-col justify-center gap-12 md:gap-20 bg-black/50 overflow-hidden relative">
 			<h2 class="text-center text-2xl font-semibold" data-aos="slide-down" data-aos-duration="600">Our Team</h2>
 			<div class="w-full flex items-center gap-10 flex-wrap md:justify-evenly" >

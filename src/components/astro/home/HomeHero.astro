@@ -1,12 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import subMarine from "../../../assets/submarine.png";
+import CustomButton from "src/components/vue/composables/CustomButton.vue";
 
 ---
 
-<section class="bg-base2 xl:w-[80%] mx-auto rounded-xl xl:h-[80dvh] h-[60dvh] relative 2xl:p-44 xl:p-24 p-6 text-gray-50 flex flex-col gap-2">
-    <Image src={subMarine} alt="submarine" class="absolute xl:-right-[14vw] md:translate-y-0 translate-y-[50%]" data-aos="fade-left" />
-    <h1 class="md:text-3xl text-xl w-[90%] text-pretty leading-snug">Pemilihan Material Kapal Selam Untuk Kedalaman</h1>
-    <h2 class="md:text-6xl text-4xl font-medium">Mariana Trench</h2>
-    <p class="text-sm">dengan metode <span class="md:ms-2 font-semibold md:text-2xl">AHP & SAW</span></p>
+<section class="bg-base-color2/80 xl:w-[80%] mx-auto md:rounded-xl xl:h-[80dvh] h-[60dvh] relative 2xl:p-44 xl:p-24 p-6 text-gray-50 flex flex-col pt-24">
+    <Image src={subMarine} alt="submarine" class="grayscale-50 absolute xl:-right-[14vw] md:translate-y-0 translate-y-[50%] pointer-events-none" data-aos="fade-left" data-aos-delay="1200" />
+    <h1 class="md:text-3xl text-lg text-pretty leading-snug text-gray-300" data-aos="fade-down" data-aos-duration="1400">SPK Pemilihan Material Kapal Selam Untuk Kedalaman</h1>
+    <h2 class="md:text-6xl text-3xl font-medium" data-aos="fade-down" data-aos-duration="1000">Mariana Trench</h2>
+    <p class="text-base md:text-base text-gray-200" data-aos="fade-right" data-aos-duration="1400">dengan metode <span class="md:ms-2 font-semibold md:text-2xl">AHP & SAW</span></p>
+    <div class="flex gap-4 z-10 mt-4 md:mt-8">
+        <CustomButton data-aos="fade-up" data-aos-delay="1000" link={true} url="/criteria">get started</a></CustomButton>
+        <CustomButton type={'ghost'} data-aos="fade-up" data-aos-delay="1200" link={true} url="/team">our team</CustomButton>
+    </div>
 </section>

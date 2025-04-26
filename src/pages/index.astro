@@ -1,12 +1,13 @@
 ---
+import WaveBackground from "src/components/astro/composables/WaveBackground.astro";
 import HomeHero from "src/components/astro/home/HomeHero.astro";
 import Layout from "src/layouts/Layout.astro";
-
-
+// Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600");
 ---
 
 <Layout>
-	<main class="pt-20 p-4">
+	<main class="min-h-screen grid place-items-center bg-gradient-to-b from-base-color to-base-color2">
+		<WaveBackground />
 		<HomeHero />
 	</main>
 </Layout>
