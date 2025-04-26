@@ -6,8 +6,18 @@
     --color-base-color: #205781;
     --color-base-color2: #111652;
     --font-montserrat: "Montserrat";
+    --shadow-glow: 0px 0px 42px 4px rgba(255, 204, 214, 0.4);
 }
 
+@utility element1 {
+  @apply bg-gradient-to-b from-lime-300 from-0% via-teal-400 via-50% to-cyan-600 to-100%
+}
+@utility element2 {
+  @apply bg-gradient-to-b from-sky-300 from-0% via-red-400 via-50% to-red-600 to-100%
+}
+@utility element3 {
+  @apply bg-gradient-to-b from-neutral-300 from-0% via-stone-400 via-50% to-stone-800 to-100%
+}
 
 .nav-active:before {
     transition:  0.4s all ease;
@@ -18,4 +28,45 @@
     height: 2px;
     border-radius: 8px;
     background-color: rgba(207, 207, 207, 0.657);
+}
+
+.left-enter-active,
+.left-leave-active {
+  transition: all 0.3s ease;
+}
+
+.left-enter-from {
+  opacity: 0;
+  transform: translateX(800px);
+}
+.left-leave-to {
+  opacity: 0;
+  transform: translateX(-2000px);
+}
+
+.right-enter-active,
+.right-leave-active {
+  transition: all 0.3s ease;
+}
+
+.right-enter-from {
+  opacity: 0;
+  transform: translateX(-800px);
+}
+.right-leave-to {
+  opacity: 0;
+  transform: translateX(2000px);
+}
+
+.bouncing {
+  animation: little-bounce 1.2s ease-in-out infinite both alternate;
+}
+
+@keyframes little-bounce {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
 }
