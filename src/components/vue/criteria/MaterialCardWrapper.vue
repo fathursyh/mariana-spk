@@ -42,7 +42,7 @@ import ElementCard from '../composables/ElementCard.vue';
 </script>
 
 <template>
-    <div class="flex flex-col md:flex-row gap-4 md:gap-10 xl:gap-32 justify-center items-center xl:h-full h-screen p-8">
+    <div class="flex flex-col md:flex-row gap-4 md:gap-10 xl:gap-32 justify-center items-center xl:h-full h-screen p-8 pt-20 xl:pt-8">
     <ElementCard v-for="item in elements" :key="item.abbre" v-bind="item" @on-clicked="(e) => {
         emit('on-choose', e);
     }" />

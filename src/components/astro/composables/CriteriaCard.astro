@@ -1,0 +1,24 @@
+---
+import CriteriaCardLogo from "./CriteriaCardLogo.astro";
+
+const { title, info } = Astro.props;
+const type = title.split(" ")[0];
+---
+
+<article class="md:flex md:items-start md:-mx-4">
+  <span
+    class="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500"
+  >
+   <CriteriaCardLogo type={type} />
+  </span>
+
+  <div class="md:mx-4">
+    <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">
+      {title}
+    </h1>
+
+    <p class="mt-1 text-gray-500 dark:text-gray-300">
+      {info}
+    </p>
+  </div>
+</article>
