@@ -9,13 +9,7 @@
     --shadow-glow: 0px 0px 42px 4px rgba(255, 204, 214, 0.4);
 }
 
-@utility element1 {
-  @apply bg-gradient-to-b from-lime-300 from-0% via-teal-400 via-50% to-cyan-600 to-100%
-}
-@utility element2 {
-  @apply bg-gradient-to-b from-sky-300 from-0% via-red-400 via-50% to-red-600 to-100%
-}
-@utility element3 {
+@utility element {
   @apply bg-gradient-to-b from-neutral-300 from-0% via-stone-400 via-50% to-stone-800 to-100%
 }
 
