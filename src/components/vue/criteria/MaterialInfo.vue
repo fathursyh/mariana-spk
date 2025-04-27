@@ -1,11 +1,11 @@
 <template>
     <article class="h-full w-full grid xl:grid-cols-4 transition-colors duration-700 delay-200" :class="[bgColor]">
         <div class="text-black flex xl:justify-end justify-center items-center h-[40vh] xl:h-full w-screen xl:w-full pt-14 xl:pt-0" @click="$emit('on-exit')">
-            <Transition name="right" mode="out-in">
+            <Transition name="right">
                 <img loading="lazy" :src="image" class="mix-blend-multiply object-cover w-[80%]" :class="[element.abbre === 'Ti' && 'w-[100%] xl:translate-x-10']" :alt="element.title" v-if="isLoaded" />
             </Transition>
         </div>
-        <Transition name="left" mode="out-in">
+        <Transition name="left">
             <aside class="col-span-3 bg-gray-50 flex flex-col gap-8 md:items-end justify-center xl:p-18 p-8 shadow-glow z-20" v-if="isLoaded">
                 <div class="xl:w-[80%] w-full text-black">
                     <h2 class="font-semibold text-2xl pb-1 mb-2 border-b border-gray-600">{{ element.title }}</h2>

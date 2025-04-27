@@ -15,8 +15,8 @@
 </script>
 
 <template>
-    <Transition :name="component === null ? 'right' : 'left'" mode="out-in" appear>
-        <MaterialCardWrapper @on-choose="handleElement" v-if="component == null" />
+    <Transition :name="component === null ? 'fade' : 'left'" appear>
+        <MaterialCardWrapper @on-choose="handleElement" v-if="component === null" />
         <MaterialInfo :element="component" v-else @on-exit="exitInfo" />
     </Transition>
 </template>
