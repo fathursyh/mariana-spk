@@ -3,7 +3,12 @@
         title: string,
         number: number,
         abbre: string,
-        mass: string
+        mass: string,
+        info: {
+            short: string,
+            strong: string[],
+            weak: string[]
+        }
     }
     const props = defineProps<ElementCardProps>();
     defineEmits(['on-clicked']);
