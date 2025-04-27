@@ -3,13 +3,15 @@ import TeamAvatar from 'src/components/astro/composables/TeamAvatar.astro';
 import Layout from '../layouts/Layout.astro';
 import type { KelompokInterface } from 'src/models/KelompokInterface';
 import WaveBackground from 'src/components/astro/composables/WaveBackground.astro';
+import TooltipElement from 'src/components/vue/composables/TooltipElement.vue';
 const kelompok : KelompokInterface[] = [
 	{
 		name: "Fathur Syah",
 		npm: "065122057",
 		kelas: "B",
 		jobdesk: "Web & DSS Model",
-		image: "",
+		image: "/jojo.png",
+		tooltip: "*Menacing . . .*"
 	},
 	{
 		name: "Helena Octaviana",
@@ -17,6 +19,7 @@ const kelompok : KelompokInterface[] = [
 		kelas: "A",
 		jobdesk: "UI/UX & DSS Model",
 		image: "",
+		tooltip: "Love what you do!"
 	},
 	{
 		name: "Riri Handini",
@@ -24,6 +27,7 @@ const kelompok : KelompokInterface[] = [
 		kelas: "E",
 		jobdesk: "UI/UX & DSS Model",
 		image: "",
+		tooltip: "Nothing gained by standing still."
 	},
 ]
 
@@ -40,7 +44,9 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600
 			<div class="w-full flex items-center gap-10 flex-wrap md:justify-evenly" >
 				{
 					kelompok.map(item => (
-						<TeamAvatar {...item} />
+						<TooltipElement client:idle text={item.tooltip!}>
+							<TeamAvatar {...item} />
+						</TooltipElement>
 					))
 				}
 			</div>

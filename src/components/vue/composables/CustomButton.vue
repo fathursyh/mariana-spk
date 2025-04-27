@@ -9,13 +9,13 @@
 
 <template>
     <button v-if="!link"
-        class="px-6 py-2 font-medium tracking-wide capitalize transition-all duration-300 rounded-lg cursor-pointer hover:scale-105 min-w-32"
+        class="px-6 py-3 font-medium tracking-wide capitalize transition-all duration-300 rounded-lg cursor-pointer hover:scale-105 min-w-32"
         :class="type">
         <slot />
     </button>
     <a v-else
         :href="url"
-        class="px-6 py-2 font-medium tracking-wide capitalize transition-all duration-300 rounded-lg cursor-pointer hover:scale-105 min-w-32 text-center"
+        class="px-6 py-3 font-medium tracking-wide capitalize transition-all duration-300 rounded-lg cursor-pointer hover:scale-105 min-w-32 text-center"
         :class="type" data-astro-prefetch >
         <slot />
     </a>

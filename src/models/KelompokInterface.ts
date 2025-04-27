@@ -4,4 +4,5 @@ export interface KelompokInterface {
     kelas: string,
     jobdesk: string,
     image: string,
+    tooltip?: string
 }
