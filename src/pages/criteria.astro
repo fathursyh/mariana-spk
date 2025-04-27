@@ -7,8 +7,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600
 <title>Criteria & Analysis</title>
 <Layout>
     <main>
-        <section class="w-full h-[100dvh] md:h-screen text-gray-50 bg-gradient-to-b from-base-color to-base-color2 overflow-x-hidden">
-            <MaterialSection client:only="vue" />
+        <section class="w-full min-h-screen xl:h-screen text-gray-50 bg-gradient-to-b from-base-color to-base-color2 overflow-x-hidden">
+            <MaterialSection client:idle />
         </section>
         <TheCriteria  />
     </main>

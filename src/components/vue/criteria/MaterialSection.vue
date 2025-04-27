@@ -8,12 +8,15 @@
     const handleElement = (e: ElementCardProps) => {
         component.value = e;
     };
-
+    const exitInfo = () => {
+        component.value = null;
+        document.body.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+    }
 </script>
 
 <template>
     <Transition :name="component === null ? 'right' : 'left'" mode="out-in" appear>
         <MaterialCardWrapper @on-choose="handleElement" v-if="component == null" />
-        <MaterialInfo :element="component" v-else @on-exit="component = null" />
+        <MaterialInfo :element="component" v-else @on-exit="exitInfo" />
     </Transition>
 </template>
