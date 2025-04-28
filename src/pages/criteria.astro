@@ -1,9 +1,9 @@
 ---
-import InputCriteria from "src/components/astro/criteria/InputCriteria.astro";
 import TheCriteria from "src/components/astro/criteria/TheCriteria.astro";
+import InputAlternative from "src/components/vue/criteria/InputAlternative.vue";
 import MaterialSection from "src/components/vue/criteria/MaterialSection.vue";
 import Layout from "src/layouts/Layout.astro";
-Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600");
+// Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600");
 ---
 <title>Criteria & Analysis</title>
 <Layout>
@@ -12,6 +12,6 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600
             <MaterialSection client:only="vue" />
         </section>
         <TheCriteria  />
-        <InputCriteria />
+        <InputAlternative client:visible />
     </main>
 </Layout>
