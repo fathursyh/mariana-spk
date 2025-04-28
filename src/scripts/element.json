@@ -53,5 +53,43 @@
           "Sulit untuk menahan tekanan kompresi ekstrem. Biasanya dipakai di kedalaman laut sedang, bukan kedalaman ekstrem seperti Palung Mariana."
         ]
       }
+    },
+    {
+      "title": "Aluminium",
+      "number": 13,
+      "abbre": "Al",
+      "mass": "26.982",
+      "info": {
+        "short": "Komposit adalah material yang terdiri dari dua atau lebih bahan berbeda yang digabungkan untuk membentuk material baru dengan sifat unggul.",
+        "strong": [
+          "Bobot Ringan: Aluminium jauh lebih ringan daripada baja dan bahkan sedikit lebih ringan dari titanium.",
+          "Ketahanan Korosi yang Baik: Aluminium membentuk lapisan oksida pelindung yang secara alami melindunginya dari korosi dalam banyak kondisi air laut.",
+          "Biaya Lebih Rendah dari Titanium: Secara umum, aluminium dan paduannya lebih murah daripada titanium."
+        ],
+        "weak": [
+          "Rentang Suhu Terbatas: Aluminium memiliki rentang suhu operasional yang lebih terbatas dibandingkan dengan baja atau titanium.",
+          "Kekuatan aluminium secara signifikan lebih rendah daripada baja berkekuatan tinggi atau titanium.",
+          "Aluminium dapat mengalami korosi galvanik yang dipercepat dalam air laut."
+        ]
+      }
+    },
+    {
+      "title": "Nickel",
+      "number": 28,
+      "abbre": "Ni",
+      "mass": "58.693",
+      "info": {
+        "short": "Inconel adalah keluarga paduan super berbasis nikel yang dikenal dengan ketahanan suhu tinggi, kekuatan tinggi, dan ketahanan korosi yang luar biasa, bahkan dalam lingkungan yang ekstrem.",
+        "strong": [
+          "Beberapa jenis Inconel memiliki kekuatan yang sebanding atau bahkan melebihi baja berkekuatan tinggi dan mendekati beberapa paduan titanium.",
+          "Inconel sangat tahan terhadap berbagai jenis korosi, termasuk korosi air laut dan serangan kimia.",
+          "Material ini sangat tahan terhadap deformasi permanen (creep) di bawah tekanan tinggi dalam waktu lama dan juga tahan terhadap oksidasi."
+        ],
+        "weak": [
+          "Inconel adalah salah satu material logam yang paling mahal karena kandungan nikel dan kromiumnya yang tinggi serta proses pembuatannya yang kompleks.",
+          "Inconel juga sulit untuk diolah dan dilas, membutuhkan teknik dan peralatan khusus.",
+          "Meskipun lebih ringan dari beberapa jenis baja, Inconel umumnya lebih berat daripada titanium dengan kekuatan yang setara."
+        ]
+      }
     }
   ]
