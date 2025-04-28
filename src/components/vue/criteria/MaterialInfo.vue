@@ -2,7 +2,7 @@
     <article class="h-full w-full grid xl:grid-cols-4 transition-colors duration-700 delay-200" :class="[bgColor]">
         <div class="text-black flex xl:justify-end justify-center items-center h-[40vh] xl:h-full w-screen xl:w-full pt-14 xl:pt-0" @click="$emit('on-exit')">
             <Transition name="right">
-                <img loading="lazy" :src="image" class="mix-blend-multiply object-cover w-[80%]" :class="[element.abbre === 'Ti' && 'w-[100%] xl:translate-x-10']" :alt="element.title" v-if="isLoaded" />
+                <img loading="lazy" :src="image" class="mix-blend-multiply object-cover w-[80%] bouncing" :class="[element.abbre === 'Ti' && 'w-[100%] xl:translate-x-10']" :alt="element.title" v-if="isLoaded" />
             </Transition>
         </div>
         <Transition name="left">
@@ -48,9 +48,9 @@
     }>();
 
     const image = computed(() => {
-        if (props.element.abbre === 'C') return "https://science4fun.info/wp-content/uploads/2017/07/carbon-element.jpg";
-        if (props.element.abbre === 'Fe') return "https://content.jdmagicbox.com/quickquotes/images_main/iron-ore-2215976052-t4x8qc9w.jpg?impolicy=queryparam&im=Resize=(360,360),aspect=fit";
-        if (props.element.abbre === 'Ti') return "https://d12oja0ew7x0i8.cloudfront.net/images/Article_Images/ImageForArticle_1298_1576507888782677.png";
+        if (props.element.abbre === 'C') return "carbon.jpg";
+        if (props.element.abbre === 'Fe') return "ferum.avif";
+        if (props.element.abbre === 'Ti') return "titanium.webp";
     });
 
     const isLoaded = ref(false);
