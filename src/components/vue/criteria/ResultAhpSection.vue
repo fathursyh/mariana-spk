@@ -23,7 +23,7 @@
                 </tr>
             </tbody>
         </table>
-        <p class="px-2">Alternatif terbaik dari ketiga material : <span class="font-semibold">{{ result.ranked[0].name }}</span></p>
+        <p class="px-2 text-center">Alternatif terbaik dari ketiga material : <span class="font-semibold">{{ result.ranked[0].name }}</span></p>
         <CustomButton type="ghost" @click="$emit('onBack')">Back</CustomButton>
     </summary>
 </template>
