@@ -118,8 +118,16 @@ function runAHPWithSelectedAlternatives(criteriaMatrix, alternativeMatrices, sel
 
     // Urutkan berdasarkan skor tertinggi
     ranked.sort((a, b) => b.score - a.score);
-
-    return ranked;
+      // === Step 4: Cari pemenang dari tiap kriteria (semua alternatif) ===
+      const winnersPerCriterion = filteredAlternativeWeights.map((weights, critIdx) => {
+        const maxIndex = weights.indexOf(Math.max(...weights));
+        return {
+            criterion: `Kriteria ${critIdx + 1}`,
+            winner: alternativesLabels[maxIndex],
+            score: weights[maxIndex]
+        };
+    });
+    return {ranked, winnersPerCriterion};
 }
 
 const alternatives = ["Titanium", "Ferrum", "Carbon", "Aluminium", "Nickel"];
@@ -134,4 +142,3 @@ export const getRankings = (input) => {
     });
     return runAHPWithSelectedAlternatives(criteriaMatrix, alternativeMatrices, pilihan, alternatives);
 };
-

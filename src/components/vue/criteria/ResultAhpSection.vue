@@ -1,5 +1,32 @@
 <template>
-    <summary class="w-full h-full flex flex-col justify-center items-center gap-6 overflow-x-auto">
+    <summary class="w-full h-full flex flex-col justify-center items-center gap-6 overflow-x-auto" v-if="result !== undefined">
+        <div class="grid xl:grid-cols-5 grid-cols-2 grid-rows-3 xl:grid-rows-1 gap-5">
+            <div class="flex flex-col gap-2 items-center mb-4">
+                <h3>Compressive Strength</h3>
+                <p class="text-xl font-semibold">{{ result.winnersPerCriterion[0].winner }}</p>
+                <p class="text-xs">( {{ result.winnersPerCriterion[0].score }} )</p>
+            </div>
+            <div class="flex flex-col gap-2 items-center">
+                <h3>Corrosion Resistance</h3>
+                <p class="text-xl font-semibold">{{ result.winnersPerCriterion[1].winner }}</p>
+                <p class="text-xs">( {{ result.winnersPerCriterion[1].score }} )</p>
+            </div>
+            <div class="flex flex-col gap-2 items-center">
+                <h3>Density</h3>
+                <p class="text-xl font-semibold">{{ result.winnersPerCriterion[2].winner }}</p>
+                <p class="text-xs">( {{ result.winnersPerCriterion[2].score }} )</p>
+            </div>
+            <div class="flex flex-col gap-2 items-center">
+                <h3>Cost</h3>
+                <p class="text-xl font-semibold">{{ result.winnersPerCriterion[3].winner }}</p>
+                <p class="text-xs">( {{ result.winnersPerCriterion[3].score }} )</p>
+            </div>
+            <div class="flex flex-col gap-2 items-center">
+                <h3>Fabricability</h3>
+                <p class="text-xl font-semibold">{{ result.winnersPerCriterion[4].winner }}</p>
+                <p class="text-xs">( {{ result.winnersPerCriterion[4].score }} )</p>
+            </div>
+        </div>
         <table class="min-w-96 bg-gray-700 border border-gray-300 rounded-lg shadow-md">
             <thead>
                 <tr class="bg-gray-200 text-gray-700">
@@ -9,14 +36,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="hover:bg-gray-800 text-center" v-for="(item, i) in result" :key="item.name">
+                <tr class="hover:bg-gray-800 text-center" v-for="(item, i) in result.ranked" :key="item.name">
                     <td class="py-2 px-4 border-b">{{ i+1 }}</td>
                     <td class="py-2 px-4 border-b text-left">{{ item.name }}</td>
                     <td class="py-2 px-4 border-b">{{ item.score }}</td>
                 </tr>
             </tbody>
         </table>
-        <p v-if="result">Alternatif terbaik dari ketiga material : <span class="font-semibold">{{ result[0].name }}</span></p>
+        <!-- <p>Alternatif terbaik dari ketiga material : <span class="font-semibold">{{ result[0].name }}</span></p> -->
         <CustomButton type="ghost" @click="$emit('onBack')">Back</CustomButton>
     </summary>
 </template>
