@@ -44,11 +44,11 @@ const fabricabilityMatrix = [
 ];
 
 const corrosionResistanceMatrix = [
-    [1, 7, 3, 5, 9],
-    [1 / 7, 1, 1 / 3, 1, 3],
-    [1 / 3, 3, 1, 3, 7],
-    [1 / 5, 1 / 3, 1 / 3, 1, 3],
-    [1 / 9, 1 / 5, 1 / 7, 1 / 3, 1],
+    [1,     7,     3,     5,     6],     // titanium
+    [1/7,   1,     1/3,   1/2,   1/3],   // ferrum
+    [1/3,   3,     1,     2,     3],     // carbon
+    [1/5,   2,     1/2,   1,     2],     // aluminium
+    [1/6,   3,     1/3,   1/2,   1],  
 ];
 
 const costMatrix = [
