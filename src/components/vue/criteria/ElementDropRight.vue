@@ -24,7 +24,7 @@
             >
             
             <Draggable class="p-2" v-for="(item) in cardData" :key="item.title">
-             <article class="w-20 h-20 bg-red-800 text-white rounded-full grid place-items-center font-bold text-xl cursor-grab! active:cursor-grabbing!">
+             <article class="w-20 h-20 bg-red-800 text-white rounded-full grid place-items-center font-bold text-2xl cursor-grab! active:cursor-grabbing!" @touchstart="switchSides(1, 0, item)">
                 {{ item.abbre }}
              </article>
             </Draggable>
@@ -45,7 +45,7 @@
     import { Container, Draggable } from "vue-dndrop";
     import YellowSubmarine from "./YellowSubmarine.vue";
     import { ref } from "vue";
-    const props = defineProps(['cardData', 'dropHandler']);
+    const props = defineProps(['cardData', 'dropHandler', 'switchSides']);
     defineEmits(['full', 'reset']);
     const dragged = ref(false);
 </script>

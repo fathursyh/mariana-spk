@@ -21,14 +21,26 @@
         sessionStorage.removeItem('alternative');
     };
 
+    const switchSides = (prev : number, to : number, data : any) => {
+        if (prev === 0 && dropContainer.value[1].length > 2) {
+            full.value = true;
+            return;
+        } else {
+            full.value = false;
+        }
+        dropContainer.value[to].push(data);
+        dropContainer.value[prev] = dropContainer.value[prev].filter(item => item.title !== data.title);
+        sessionStorage.setItem('alternative', JSON.stringify(dropContainer.value[1]));
+    }
+
     onMounted(()=>{
         sessionStorage.clear();
     });
 </script>
 
 <template>
-    <section class="w-full min-h-screen bg-gradient-to-b from-base-color2 to-base-color grid grid-cols-1 xl:grid-cols-3">
-        <ElementDropLeft :cardData="dropContainer[0]" :drop-handler="onDrop" :full="full" />
-        <ElementDropRight :cardData="dropContainer[1]" :drop-handler="onDrop" @full="fullHandler" @reset="resetContainer" />
+    <section id="input-alt" class="w-full min-h-screen bg-gradient-to-b from-base-color2 to-base-color grid grid-cols-1 xl:grid-cols-3">
+        <ElementDropLeft :cardData="dropContainer[0]" :drop-handler="onDrop" :full="full" :switchSides="switchSides" />
+        <ElementDropRight :cardData="dropContainer[1]" :drop-handler="onDrop" @full="fullHandler" @reset="resetContainer" :switchSides="switchSides" />
     </section>
 </template>

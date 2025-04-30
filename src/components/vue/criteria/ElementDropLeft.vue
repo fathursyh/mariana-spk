@@ -1,6 +1,7 @@
 <template>
     <div class="w-full h-full flex flex-col justify-center items-center py-24 gap-4">
-    <h4 class=" inline-block text-gray-50 p-3 px-6 rounded-full font-bold motion-safe:animate-pulse" :class="[full === true ? 'bg-red-600' : 'bg-green-600']">{{ full === true ? 'Max' : 'Drag to submarine!' }}</h4>
+    <h4 class="hidden xl:inline-block text-gray-50 p-3 px-6 rounded-full font-bold motion-safe:animate-pulse" :class="[full === true ? 'bg-red-600' : 'bg-green-600']">{{ full === true ? 'Max' : 'Drag to submarine!' }}</h4>
+    <h4 class=" inline-block xl:hidden text-gray-50 p-3 px-6 rounded-full font-bold motion-safe:animate-pulse" :class="[full === true ? 'bg-red-600' : 'bg-green-600']">{{ full === true ? 'Max' : 'Touch 3 of 5!' }}</h4>
         <Container @drop="dropHandler(0, $event)"
             :orientation="'vertical'"
             :group-name="'element'"
@@ -10,7 +11,7 @@
              }"
         >
         <Draggable class="p-2" v-for="(item) in cardData" :key="item.title">
-            <ElementCard :noAnimate="true" v-bind="item" :small="true" :class="[full === true ? 'active:cursor-not-allowed! cursor-no-drop!' : 'active:cursor-grabbing! cursor-grab!']" />
+            <ElementCard :noAnimate="true" v-bind="item" :small="true" :class="[full === true ? 'active:cursor-not-allowed! cursor-no-drop!' : 'active:cursor-grabbing! cursor-grab!']" @touchstart="switchSides(0, 1, item)" />
         </Draggable>
     </Container>
     </div>
@@ -19,6 +20,6 @@
 <script setup>
     import { Container, Draggable } from "vue-dndrop";
     import ElementCard from "../composables/ElementCard.vue";
-    const props = defineProps(['cardData', 'dropHandler', 'full']);
+    const props = defineProps(['cardData', 'dropHandler', 'full', 'switchSides']);
 
 </script>

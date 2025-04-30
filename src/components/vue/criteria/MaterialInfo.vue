@@ -51,8 +51,8 @@
         if (props.element.abbre === 'C') return "carbon.jpg";
         if (props.element.abbre === 'Fe') return "ferum.avif";
         if (props.element.abbre === 'Ti') return "titanium.webp";
-        if (props.element.abbre === 'Al') return "https://www.johndesmond.com/wp-content/uploads/2020/02/aluminium-al-part-of-a-series-on-metals-commonly-alloyed-with-stainless-steel-to-form-varying-grades-of-material_01.jpg";
-        if (props.element.abbre === 'Ni') return "https://www.cohenusa.com/wp-content/uploads/2020/09/nickel-ore-resized.jpeg";
+        if (props.element.abbre === 'Al') return "aluminium.jpg";
+        if (props.element.abbre === 'Ni') return "nickel.jpeg";
     });
 
     const isLoaded = ref(false);

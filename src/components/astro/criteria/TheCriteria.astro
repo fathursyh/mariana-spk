@@ -12,8 +12,8 @@ const criterias = [
 ---
 
 <section class="bg-black/80 xl:h-screen grid place-items-center bg-[url('https://i.pinimg.com/originals/3c/e6/95/3ce69531311986a8a78f1e093f53df3d.gif')] bg-no-repeat bg-cover bg-blend-multiply">
-    <div class="container px-6 py-10 mx-auto backdrop-blur-sm">
-        <div class="flex flex-col xl:gap-10 gap-6">
+    <div class="container px-8 py-10 mx-auto backdrop-blur-sm">
+        <div class="flex flex-col justify-center  xl:gap-10 gap-6">
             <div>
                 <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white" >five criteria</h1>
 
@@ -23,7 +23,7 @@ const criterias = [
                     <span class="inline-block w-1 h-1 ml-1 bg-blue-500 rounded-full"></span>
                 </div>
             </div>
-            <div class="w-full grid xl:grid-cols-2 gap-8" >
+            <div class="w-full grid xl:grid-cols-2 gap-8 xl:px-10" >
                 {
                     criterias.map((item) => (
                         <CriteriaCard {...item} />           
