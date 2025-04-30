@@ -75,10 +75,10 @@ const corrosionResistanceMatrix = [
 ];
 
 const costMatrix = [
-    [1, 5, 3, 1, 1 / 5],
-    [1 / 5, 1, 1 / 3, 1 / 7, 1 / 9],
-    [1 / 3, 3, 1, 1, 1 / 3],
-    [1, 7, 3, 1, 1 / 5],
+    [1, 1/5, 1/3, 1/3, 1 / 5],
+    [5, 1, 1 / 3, 1 / 7, 1 / 9],
+    [3, 3, 1, 1, 1 / 3],
+    [3, 7, 3, 1, 1 / 5],
     [5, 9, 3, 5, 1],
 ];
 
@@ -115,24 +115,22 @@ function runAHPWithSelectedAlternatives(criteriaMatrix, alternativeMatrices, sel
         name: alternativesLabels[index],
         score: finalScores[i],
     }));
-
     // Urutkan berdasarkan skor tertinggi
     ranked.sort((a, b) => b.score - a.score);
-      // === Step 4: Cari pemenang dari tiap kriteria (semua alternatif) ===
-      const winnersPerCriterion = filteredAlternativeWeights.map((weights, critIdx) => {
+    // === Step 4: Cari pemenang dari tiap kriteria (semua alternatif) ===
+    const winnersPerCriterion = filteredAlternativeWeights.map((weights, critIdx) => {
         const maxIndex = weights.indexOf(Math.max(...weights));
         return {
-            criterion: `Kriteria ${critIdx + 1}`,
-            winner: alternativesLabels[maxIndex],
+            winner: maxIndex,
             score: weights[maxIndex]
         };
     });
-    return {ranked, winnersPerCriterion};
+    return { ranked, winnersPerCriterion };
 }
 
 const alternatives = ["Titanium", "Ferrum", "Carbon", "Aluminium", "Nickel"];
 
-const alternativeMatrices = [compressiveStrengthMatrix, densityMatrix, fabricabilityMatrix, corrosionResistanceMatrix, costMatrix];
+const alternativeMatrices = [compressiveStrengthMatrix, corrosionResistanceMatrix, densityMatrix, costMatrix, fabricabilityMatrix];
 
 
 export const getRankings = (input) => {
