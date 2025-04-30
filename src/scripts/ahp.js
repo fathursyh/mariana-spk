@@ -20,27 +20,27 @@ const criteriaMatrix = [
 ];
 
 const compressiveStrengthMatrix = [
-    [1, 3, 5, 7, 9],
-    [1 / 3, 1, 3, 5, 7],
-    [1 / 5, 1 / 3, 1, 3, 5],
-    [1 / 7, 1 / 5, 1 / 3, 1, 3],
-    [1 / 9, 1 / 7, 1 / 5, 1 / 3, 1],
+    [1,     2,     5,     4,     3],     // titanium
+    [1/2,   1,     4,     3,     2],     // ferrum
+    [1/5,   1/4,   1,     1/2,   1/3],   // carbon
+    [1/4,   1/3,   2,     1,     1/2],   // aluminium
+    [1/3,   1/2,   3,     2,     1],     // nickel
 ];
 
 const densityMatrix = [
-    [1, 3, 5, 3, 5],
-    [1 / 3, 1, 3, 1, 3],
-    [1 / 5, 1 / 3, 1, 1 / 3, 1 / 3],
-    [1 / 3, 1, 3, 1, 2],
-    [1 / 5, 1 / 3, 3, 1 / 2, 1],
-];
+    [1,     3,     1/3,   1/2,   5],     // titanium
+    [1/3,   1,     1/5,   1/2,   3],     // ferrum
+    [3,     5,     1,     2,     7],     // carbon (paling ringan)
+    [2,     2,     1/2,   1,     4],     // aluminium
+    [1/5,   1/3,   1/7,   1/4,   1],     // nickel (paling berat)
+  ];
 
 const fabricabilityMatrix = [
-    [1, 1 / 5, 1 / 3, 1 / 2, 1 / 3],
-    [5, 1, 3, 5, 7],
-    [3, 1 / 3, 1, 3, 5],
-    [2, 1 / 5, 1 / 3, 1, 3],
-    [3, 1 / 7, 1 / 5, 1 / 3, 1],
+    [1,     1/3,   2,     1/4,   1/2],   // titanium
+    [3,     1,     5,     1,     3],     // ferrum (mudah)
+    [1/2,   1/5,   1,     1/4,   1/3],   // carbon (sulit)
+    [4,     1,     4,     1,     3],     // aluminium (mudah)
+    [2,     1/3,   3,     1/3,   1],     // nickel (menengah)
 ];
 
 const corrosionResistanceMatrix = [
@@ -52,11 +52,11 @@ const corrosionResistanceMatrix = [
 ];
 
 const costMatrix = [
-    [1, 1/5, 1/3, 1/3, 1 / 5],
-    [5, 1, 1 / 3, 1 / 7, 1 / 9],
-    [3, 3, 1, 1, 1 / 3],
-    [3, 7, 3, 1, 1 / 5],
-    [5, 9, 3, 5, 1],
+    [1,     1/7,   1/5,   1/6,   1/4],  // titanium (paling mahal)
+    [7,     1,     3,     2,     4],    // ferrum (paling murah)
+    [5,     1/3,   1,     1/2,   2],    // carbon
+    [6,     1/2,   2,     1,     3],    // aluminium
+    [4,     1/4,   1/2,   1/3,   1],    // nickel
 ];
 
 function runAHPWithSelectedAlternatives(criteriaMatrix, alternativeMatrices, selectedIndices, alternativesLabels) {
