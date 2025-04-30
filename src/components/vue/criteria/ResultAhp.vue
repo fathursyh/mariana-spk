@@ -26,7 +26,7 @@
 </script>
 
 <template>
-    <div class="w-full h-full backdrop-blur-xs xl:p-12 p-4 transition-colors duration-500 text-white" :class="[!start ? 'bg-gradient-to-b from-gray-700 to-gray-900' : '']">
+    <div class="w-full h-full backdrop-blur-xs transition-colors duration-500 text-white" :class="[!start ? 'bg-gradient-to-b from-gray-700 to-gray-900' : '']">
        <Transition name="fade" mode="out-in">
         <div class="w-full h-full grid place-items-center" v-if="!start">
             <CustomButton type="secondary" class="active:scale-75 animate-pulse hover:animate-none" @click="analyze">Analyze!</CustomButton>

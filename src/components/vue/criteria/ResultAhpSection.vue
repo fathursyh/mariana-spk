@@ -1,5 +1,5 @@
 <template>
-    <summary class="w-full h-full flex flex-col justify-center items-center gap-6 overflow-x-auto" v-if="result !== undefined">
+    <summary class="w-full h-full flex flex-col justify-center items-center gap-6 overflow-x-auto px-4" v-if="result !== undefined">
         <div class="grid xl:grid-cols-5 grid-cols-2 grid-rows-3 xl:grid-rows-1 gap-5">
             <div class="flex flex-col gap-2 items-center mb-4">
                 <h3>Compressive Strength</h3>
