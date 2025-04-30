@@ -1,33 +1,33 @@
 <template>
     <summary class="w-full h-full flex flex-col justify-center items-center gap-6 overflow-x-auto" v-if="result !== undefined">
         <div class="grid xl:grid-cols-5 grid-cols-2 grid-rows-3 xl:grid-rows-1 xl:gap-5 gap-3 px-2">
-            <div class="flex flex-col gap-2 items-center text-center">
+            <div class="flex flex-col xl:gap-2 items-center text-center">
                 <h3>Compressive Strength</h3>
                 <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[0].winner].title }}</p>
                 <p class="text-xs">( {{ result.winnersPerCriterion[0].score }} )</p>
             </div>
-            <div class="flex flex-col gap-2 items-center text-center">
+            <div class="flex flex-col xl:gap-2 items-center text-center">
                 <h3>Corrosion Resistance</h3>
                 <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[1].winner].title }}</p>
                 <p class="text-xs">( {{ result.winnersPerCriterion[1].score }} )</p>
             </div>
-            <div class="flex flex-col gap-2 items-center text-center">
+            <div class="flex flex-col xl:gap-2 items-center text-center">
                 <h3>Density</h3>
                 <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[2].winner].title }}</p>
                 <p class="text-xs">( {{ result.winnersPerCriterion[2].score }} )</p>
             </div>
-            <div class="flex flex-col gap-2 items-center text-center">
+            <div class="flex flex-col xl:gap-2 items-center text-center">
                 <h3>Cost</h3>
                 <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[3].winner].title }}</p>
                 <p class="text-xs">( {{ result.winnersPerCriterion[3].score }} )</p>
             </div>
-            <div class="flex flex-col gap-2 items-center text-center">
+            <div class="flex flex-col xl:gap-2 items-center text-center">
                 <h3>Fabricability</h3>
                 <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[4].winner].title }}</p>
                 <p class="text-xs">( {{ result.winnersPerCriterion[4].score }} )</p>
             </div>
         </div>
-        <table class="min-w-96 bg-gray-700 border border-gray-300 rounded-lg shadow-md">
+        <table class="min-w-96 bg-gray-700 border border-gray-300 rounded-lg shadow-md px-1">
             <thead>
                 <tr class="bg-gray-200 text-gray-700">
                     <th class="py-2 px-4 border-b">No</th>
@@ -43,7 +43,7 @@
                 </tr>
             </tbody>
         </table>
-        <p>Alternatif terbaik dari ketiga material : <span class="font-semibold">{{ result.ranked[0].name }}</span></p>
+        <p class="px-2">Alternatif terbaik dari ketiga material : <span class="font-semibold">{{ result.ranked[0].name }}</span></p>
         <CustomButton type="ghost" @click="$emit('onBack')">Back</CustomButton>
     </summary>
 </template>
