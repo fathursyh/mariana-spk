@@ -1,33 +1,13 @@
 <template>
-    <summary class="w-full h-full flex flex-col justify-center items-center gap-6 overflow-x-auto" v-if="result !== undefined">
+    <summary class="w-full h-full flex flex-col justify-center items-center gap-6" v-if="result !== undefined">
         <div class="grid xl:grid-cols-5 grid-cols-2 grid-rows-3 xl:grid-rows-1 xl:gap-5 gap-3 px-2">
-            <div class="flex flex-col xl:gap-2 items-center text-center">
-                <h3 class="xl:text-base text-sm">Compressive Strength</h3>
-                <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[0].winner].title }}</p>
-                <p class="text-xs">( {{ result.winnersPerCriterion[0].score }} )</p>
-            </div>
-            <div class="flex flex-col xl:gap-2 items-center text-center">
-                <h3 class="xl:text-base text-sm">Corrosion Resistance</h3>
-                <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[1].winner].title }}</p>
-                <p class="text-xs">( {{ result.winnersPerCriterion[1].score }} )</p>
-            </div>
-            <div class="flex flex-col xl:gap-2 items-center text-center">
-                <h3 class="xl:text-base text-sm">Density</h3>
-                <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[2].winner].title }}</p>
-                <p class="text-xs">( {{ result.winnersPerCriterion[2].score }} )</p>
-            </div>
-            <div class="flex flex-col xl:gap-2 items-center text-center">
-                <h3 class="xl:text-base text-sm">Cost</h3>
-                <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[3].winner].title }}</p>
-                <p class="text-xs">( {{ result.winnersPerCriterion[3].score }} )</p>
-            </div>
-            <div class="flex flex-col xl:gap-2 items-center text-center">
-                <h3 class="xl:text-base text-sm">Fabricability</h3>
-                <p class="text-xl font-semibold">{{ inputData[result.winnersPerCriterion[4].winner].title }}</p>
-                <p class="text-xs">( {{ result.winnersPerCriterion[4].score }} )</p>
-            </div>
+            <CriteriaWinner criteria="Compressive Strength" :title="inputData[result.winnersPerCriterion[0].winner].title" :score="result.winnersPerCriterion[0].score" />
+            <CriteriaWinner criteria="Corrosion Resistance" :title="inputData[result.winnersPerCriterion[1].winner].title" :score="result.winnersPerCriterion[1].score" />
+            <CriteriaWinner criteria="Density" :title="inputData[result.winnersPerCriterion[2].winner].title" :score="result.winnersPerCriterion[2].score" />
+            <CriteriaWinner criteria="Cost" :title="inputData[result.winnersPerCriterion[3].winner].title" :score="result.winnersPerCriterion[3].score" />
+            <CriteriaWinner criteria="Fabricability" :title="inputData[result.winnersPerCriterion[4].winner].title" :score="result.winnersPerCriterion[4].score" />
         </div>
-        <table class="min-w-96 bg-gray-700 border border-gray-300 rounded-lg shadow-md mx-1">
+        <table class="min-w-96 bg-gray-700 border border-gray-300 rounded-lg shadow-md">
             <thead>
                 <tr class="bg-gray-200 text-gray-700">
                     <th class="py-2 px-4 border-b">No</th>
@@ -52,6 +32,7 @@
     import { onMounted, ref } from "vue";
     import CustomButton from "../composables/CustomButton.vue";
     import { actions } from "astro:actions";
+import CriteriaWinner from "../composables/CriteriaWinner.vue";
     defineEmits(["onBack"]);
     const props = defineProps<{
         inputData: {title: string}[];
