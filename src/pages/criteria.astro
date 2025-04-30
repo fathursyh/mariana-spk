@@ -1,10 +1,10 @@
 ---
 import AhpSection from "src/components/astro/criteria/AhpSection.astro";
 import TheCriteria from "src/components/astro/criteria/TheCriteria.astro";
+import ChartHome from "src/components/vue/charts/ChartHome.vue";
 import InputAlternative from "src/components/vue/criteria/InputAlternative.vue";
 import MaterialSection from "src/components/vue/criteria/MaterialSection.vue";
 import Layout from "src/layouts/Layout.astro";
-// Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600");
 ---
 <title>Criteria & Analysis</title>
 <Layout>
@@ -14,7 +14,8 @@ import Layout from "src/layouts/Layout.astro";
         </section>
         <TheCriteria  />
         <InputAlternative client:visible />
-        <AhpSection />
+        <AhpSection  />
+        <ChartHome client:idle />
     </main>
 </Layout>
 
