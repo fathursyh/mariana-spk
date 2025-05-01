@@ -1,6 +1,6 @@
 <template>
     <article class="h-full w-full grid xl:grid-cols-4 transition-colors duration-700 delay-200" :class="[bgColor]">
-        <div class="text-black flex xl:justify-end justify-center items-center h-[40vh] xl:h-full w-screen xl:w-full pt-14 xl:pt-0" @click="$emit('on-exit')">
+        <div class="text-black flex xl:justify-end justify-center items-center h-[40vh] xl:h-full w-screen xl:w-full pt-14 xl:pt-0 cursor-pointer" @click="$emit('on-exit')">
             <Transition name="right">
                 <img loading="lazy" :src="image" class="mix-blend-multiply object-cover w-[80%] bouncing" :class="[element.abbre === 'Ti' && 'w-[100%] xl:translate-x-10']" :alt="element.title" v-if="isLoaded" />
             </Transition>

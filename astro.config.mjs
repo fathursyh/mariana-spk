@@ -20,5 +20,5 @@ export default defineConfig({
   },
 
   integrations: [vue()],
-  adapter: vercel()
+  adapter: vercel({imageService: true})
 });

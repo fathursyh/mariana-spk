@@ -1,6 +1,7 @@
 ---
 import AhpSection from "src/components/astro/criteria/AhpSection.astro";
 import TheCriteria from "src/components/astro/criteria/TheCriteria.astro";
+import WebFooter from "src/components/astro/WebFooter.astro";
 import ChartHome from "src/components/vue/charts/ChartHome.vue";
 import InputAlternative from "src/components/vue/criteria/InputAlternative.vue";
 import MaterialSection from "src/components/vue/criteria/MaterialSection.vue";
@@ -17,5 +18,6 @@ import Layout from "src/layouts/Layout.astro";
         <AhpSection  />
         <ChartHome client:idle />
     </main>
+   <WebFooter /> 
 </Layout>
 

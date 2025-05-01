@@ -1,5 +1,4 @@
 ---
-// import WebFooter from "src/components/astro/WebFooter.astro";
 import WebNavbar from "src/components/astro/navigations/WebNavbar.astro";
 import "src/styles/global.css";
 ---
@@ -9,18 +8,15 @@ import "src/styles/global.css";
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/submarine.png" />
         <meta name="generator" content={Astro.generator} />
         <title>SPK Mariana Trench</title>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <script is:inline src="//unpkg.com/alpinejs" defer></script>
     </head>
     <body class="bg-base-color2">
-
         <WebNavbar />
         <slot />
-        <!-- <WebFooter /> -->
-
         <script src="https://unpkg.com/aos@next/dist/aos.js" is:inline></script>
         <script is:inline>
             AOS.init({
