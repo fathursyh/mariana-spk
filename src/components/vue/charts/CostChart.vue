@@ -7,7 +7,7 @@
 
 <script setup lang="js">
     import { onMounted, ref } from 'vue';
-    import { BarController, BarElement, CategoryScale, Chart, LinearScale, LineController, LineElement, PointElement } from 'chart.js';
+    import { BarController, BarElement, CategoryScale, Chart, LinearScale, LineController, LineElement, PointElement, Tooltip } from 'chart.js';
     defineEmits(['on-close']);
     const props = defineProps({
         isMobile: {type: Boolean, default: false},
@@ -20,6 +20,7 @@
         BarController,
         BarElement,
         LinearScale,
+        Tooltip,
     ]);
     const data = [
         { year: "Titanium", count: 10 },
@@ -29,15 +30,26 @@
         { year: "Nickel", count: 22 },
     ];
     onMounted(() => {
-        const canvas=document.getElementById('ct');
+        const canvas = document.getElementById('ct');
         const chart = new Chart(
             canvas,
             {
                 type: 'bar',
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: true,
+                            yAlign: 'bottom'
+                        }
+                    }
+                },
                 data: {
                     labels: data.map(row => row.year),
                     datasets: [{
-                        label: 'My First Dataset',
+                        label: 'Weight',
                         data: props.chartData,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
