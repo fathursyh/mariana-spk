@@ -39,8 +39,8 @@
 </script>
 
 <template>
-    <section id="input-alt" class="w-full min-h-screen bg-gradient-to-b from-base-color2 to-base-color grid grid-cols-1 xl:grid-cols-3">
-        <ElementDropLeft :cardData="dropContainer[0]" :drop-handler="onDrop" :full="full" :switchSides="switchSides" />
-        <ElementDropRight :cardData="dropContainer[1]" :drop-handler="onDrop" @full="fullHandler" @reset="resetContainer" :switchSides="switchSides" />
+    <section id="input-alt" class="w-full min-h-screen bg-gradient-to-b from-base-color2 to-base-color grid grid-cols-1 xl:grid-cols-3 overflow-x-hidden">
+        <ElementDropLeft :cardData="dropContainer[0]" :drop-handler="onDrop" :full="full" :switchSides="switchSides" data-aos="fade-down" data-aos-delay="400" />
+        <ElementDropRight :cardData="dropContainer[1]" :drop-handler="onDrop" @full="fullHandler" @reset="resetContainer" :switchSides="switchSides" data-aos="fade-left" data-aos-delay="200" />
     </section>
 </template>

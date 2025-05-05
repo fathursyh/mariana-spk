@@ -18,7 +18,7 @@
 </script>
 
 <template>
-    <section class="w-full min-h-screen bg-gray-100 xl:max-w-screen-lg 2xl:max-w-screen-xl mx-auto grid xl:grid-cols-2 xl:grid-rows-2 divide-gray-300 divide-y divide-x divide-dashed rounded-lg relative" v-if="chartData">
+    <section class="w-full min-h-screen bg-gray-100 xl:max-w-screen-lg 2xl:max-w-screen-xl mx-auto grid xl:grid-cols-2 xl:grid-rows-2 divide-gray-300 divide-y divide-x divide-dashed rounded-lg relative" v-if="chartData" data-aos="fade">
         <CompressiveChart :chartData="chartData[0]"  />
         <CorrosionChart :chartData="chartData[1]"  />
         <DensityChart :chartData="chartData[2]"  />
